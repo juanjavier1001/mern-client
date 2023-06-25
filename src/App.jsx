@@ -5,7 +5,7 @@ import NotFound from './pages/NotFound';
 import NavBarPage from './components/NavBarPage';
 import { TaskContextProvider } from './context/ContextTask';
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:4000/';
+axios.defaults.baseURL = 'https://mern-backend-production-fcc7.up.railway.app/';
 const App = () => {
 	return (
 		<>
