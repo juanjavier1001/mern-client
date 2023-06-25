@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import TaskPage from './pages/TaskPage';
 import TaskForm from './pages/TaskForm';
 import NotFound from './pages/NotFound';
@@ -11,13 +11,15 @@ const App = () => {
 		<>
 			<TaskContextProvider>
 				{/* <NavBarPage /> */}
-				<Routes>
-					{<Route path="/" element={<TaskForm />} />}
-					{<Route path="*" element={<NotFound />} />}
-					{/* {<Route path="/" element={<TaskPage />} />} */}
-					{/* {<Route path="/taskForm" element={<TaskForm />} />} */}
-					{/* {<Route path="/javier" element={'hola'} />} */}
-				</Routes>
+				<BrowserRouter>
+					<Routes>
+						{<Route path="/" element={<TaskForm />} />}
+						{<Route path="*" element={<NotFound />} />}
+						{/* {<Route path="/" element={<TaskPage />} />} */}
+						{/* {<Route path="/taskForm" element={<TaskForm />} />} */}
+						{/* {<Route path="/javier" element={'hola'} />} */}
+					</Routes>
+				</BrowserRouter>
 			</TaskContextProvider>
 		</>
 	);
