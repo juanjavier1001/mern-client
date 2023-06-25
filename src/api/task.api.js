@@ -1,15 +1,15 @@
 import axios from 'axios';
 
 const createTaskApi = async (task) => {
-	return await axios.post('http://localhost:4000/tasks', task);
+	return await axios.post('/tasks', task);
 };
 
 const getTaskApi = async () => {
-	return await axios.get('http://localhost:4000/tasks');
+	return await axios.get('/tasks');
 };
 
 const deleteTaskApi = async (id) => {
-	return await axios.delete(`http://localhost:4000/tasks/${id}`);
+	return await axios.delete(`/tasks/${id}`);
 };
 
 export { createTaskApi, getTaskApi, deleteTaskApi };

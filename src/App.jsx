@@ -4,6 +4,8 @@ import TaskForm from './pages/TaskForm';
 import NotFound from './pages/NotFound';
 import NavBarPage from './components/NavBarPage';
 import { TaskContextProvider } from './context/ContextTask';
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:4000/';
 const App = () => {
 	return (
 		<>
