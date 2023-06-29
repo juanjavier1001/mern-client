@@ -17,7 +17,16 @@ const TaskPage = () => {
 	return (
 		<>
 			<h1>Task</h1>
-			<TaskCard />
+			{task.length === 0 ? (
+				<h1>no hay nada</h1>
+			) : (
+				<div>
+					{task.map((e, i) => {
+						return <TaskCard e={e} key={i} />;
+					})}
+				</div>
+			)}
+
 			{/* <li>
 							<br />
 							titulo : {e.title} ---- descripcion : {e.description}

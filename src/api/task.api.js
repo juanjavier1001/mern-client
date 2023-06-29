@@ -12,4 +12,8 @@ const deleteTaskApi = async (id) => {
 	return await axios.delete(`/tasks/${id}`);
 };
 
-export { createTaskApi, getTaskApi, deleteTaskApi };
+const updateTaskApi = async (id, task) => {
+	return await axios.put(`/tasks/${id}`, task);
+};
+
+export { createTaskApi, getTaskApi, deleteTaskApi, updateTaskApi };

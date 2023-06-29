@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { createTaskApi, getTaskApi } from '../api/task.api';
+import { createTaskApi, getTaskApi, updateTaskApi } from '../api/task.api';
 
 //creamos el contexto
 
@@ -26,10 +26,23 @@ const TaskContextProvider = ({ children }) => {
 		changeTask([...task, result.data]);
 	};
 
+	//fn para actualizqar tareas
+
+	const updateTaskContext = async (obj, id) => {
+		const result = await updateTaskApi(obj, id);
+		console.log('result update task ', result.data);
+	};
+
 	return (
 		<>
 			<TaskContext.Provider
-				value={{ task, changeTask, getTaskApiAsinc, createTaskContext }}
+				value={{
+					task,
+					changeTask,
+					getTaskApiAsinc,
+					createTaskContext,
+					updateTaskContext,
+				}}
 			>
 				{children}
 			</TaskContext.Provider>
